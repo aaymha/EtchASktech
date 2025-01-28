@@ -1,8 +1,10 @@
-const container = document.querySelector("#container");
+const divsContainer = document.querySelector("#container");
 
-const divsNumber = 16;
-for(let i = 0; i < divsNumber * 16; i++) {
-    const divy = document.createElement("div");
-    divy.classList.add("div1");
-    container.appendChild(divy);
+for(let i = 0; i < 16 * 16; i++) {
+    const createDiv = document.createElement("div");
+    createDiv.classList.add("div1");
+    createDiv.addEventListener("mouseover", () => {
+        createDiv.style.backgroundColor = "red";
+    })
+    divsContainer.appendChild(createDiv);
 }
