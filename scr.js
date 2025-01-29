@@ -1,6 +1,17 @@
 const divsContainer = document.querySelector("#container");
 const gener = document.querySelector("#but");
 
+//simple function to generate and return random hex code from string of number going from 0-9 and letters going from A-F, that later gets turned into a background color, returns something like "#0211E4" (its blue btw) :)
+function randomColor() {
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)]; //means color = color + letters, so # + six pseudogenerated numbers and letters
+    }
+    return color;
+  }
+  
+
 //func to delete previous gird and create new one
 function newGrid(userGrid) {
     let removingChilder = document.querySelector("#container");
@@ -21,7 +32,7 @@ function newGrid(userGrid) {
         userCreatedGrid.style.height = `${divSize}px`;
 
         userCreatedGrid.addEventListener("mouseover", () => {
-            userCreatedGrid.style.backgroundColor = "red";
+            userCreatedGrid.style.backgroundColor = randomColor();
         })
         divsContainer.appendChild(userCreatedGrid);
     }
