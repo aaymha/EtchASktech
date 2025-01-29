@@ -42,3 +42,5 @@ gener.addEventListener("click", () => {
 })
 
 newGrid(16);
+
+//will be adding more soon 
