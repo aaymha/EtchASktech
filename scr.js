@@ -10,11 +10,11 @@ function newGrid(userGrid) {
         removingChilder.removeChild(child);
         child = removingChilder.lastElementChild;
     }
-//defining grid size by taking user input / 960px
+//defining grid size by taking user input / 960px, tbh i dont understand it much that part was not my creation
     const divSize = 960 / userGrid;
     const gridSize = userGrid;
 
-//loop to create grids, grid size * grid size means if the user input is 30, then 30 * 30 = will be created grid in the space of 960 pixels
+//loop to create grids, grid size * grid size means if the user input is 30, then 30 * 30 square divs grid = will be created in the space of 960 pixels
     for(let i = 0; i < gridSize * gridSize; i++) {
         const userCreatedGrid = document.createElement("div");
         userCreatedGrid.style.width = `${divSize}px`;
