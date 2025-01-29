@@ -1,15 +1,7 @@
 const divsContainer = document.querySelector("#container");
 const gener = document.querySelector("#but");
 
-for(let i = 0; i < 16 * 16; i++) {
-    const createDiv = document.createElement("div");
-    createDiv.classList.add("div1");
-    createDiv.addEventListener("mouseover", () => {
-        createDiv.style.backgroundColor = "red";
-    })
-    divsContainer.appendChild(createDiv);
-}
-
+//func to delete previous gird and create new one
 function newGrid(userGrid) {
     let removingChilder = document.querySelector("#container");
     let child = removingChilder.lastElementChild;
@@ -18,10 +10,11 @@ function newGrid(userGrid) {
         removingChilder.removeChild(child);
         child = removingChilder.lastElementChild;
     }
-
+//defining grid size by taking user input / 960px
     const divSize = 960 / userGrid;
     const gridSize = userGrid;
 
+//loop to create grids, grid size * grid size means if the user input is 30, then 30 * 30 = will be created grid in the space of 960 pixels
     for(let i = 0; i < gridSize * gridSize; i++) {
         const userCreatedGrid = document.createElement("div");
         userCreatedGrid.style.width = `${divSize}px`;
@@ -33,7 +26,7 @@ function newGrid(userGrid) {
         divsContainer.appendChild(userCreatedGrid);
     }
 }
-
+//button that when clicked pops out prompt asking for number of squares with the limit of 100;
 gener.addEventListener("click", () => {
     let userGrid = prompt("Enter number for a new grid:  (limit: 100");
     if(userGrid < 100 && userGrid > 1) {
@@ -41,6 +34,7 @@ gener.addEventListener("click", () => {
     } else (alert("Wrong number!"));
 })
 
-newGrid(16);
+
+newGrid(16); //generating first grid that will display right after opening page, 16x16 square divs
 
 //will be adding more soon 
