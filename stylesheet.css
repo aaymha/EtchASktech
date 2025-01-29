@@ -7,8 +7,9 @@
 
 button {
     border-radius: 20px;
-    width: 120px;
+    width: 200px;
     height: 60px;
+    font-size: large;
     background-color:aquamarine;
     font-weight: bold;
 }
